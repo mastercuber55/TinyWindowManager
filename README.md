@@ -46,3 +46,6 @@ Just include `TWM.hpp` in your project and define `TWM_IMPLEMENTATION` once befo
 
 MIT License — free for personal and commercial use.
 Contributions and pull requests are welcome!
+
+## 🖥️ Community & Support
+Join the Discord server to chat about the project, ask questions, or follow development updates: https://discord.gg/7zvpWnE7QV

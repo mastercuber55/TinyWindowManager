@@ -46,5 +46,3 @@ Just include `TWM.hpp` in your project and define `TWM_IMPLEMENTATION` once befo
 
 MIT License — free for personal and commercial use.
 Contributions and pull requests are welcome!
-
-> *“A window manager so small, it just fits anywhere.”*

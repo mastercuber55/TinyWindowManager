@@ -25,7 +25,6 @@
 
 #ifndef TWM
 #define TWM
-#endif
 
 #undef RAYGUI_IMPLEMENTATION
 #include "raygui.h"
@@ -38,25 +37,30 @@ struct Window {
   bool Dragging = false;
   bool Active = false;
 
-  virtual void Init() {}
-  virtual void Draw() {}
+  virtual void Init();
+  virtual void Draw();
 };
 extern std::vector<Window *> States;
-void MakeMoveable(Window* win,
-                        float TitleBarHeight = 20.0f);
+void MakeMoveable(Window *win, float TitleBarHeight = 20.0f);
 void Update();
 void Draw();
 } // namespace TWM
 
-// #define TWM_IMPLEMENTATION
+#endif
+
 #ifdef TWM_IMPLEMENTATION
+#undef TWM_IMPLEMENTATION
 
 namespace TWM {
-std::vector<Window *> States;
-void MakeMoveable(Window* win,
-                        float TitleBarHeight) {
 
-  Rectangle TitleBar = {win->Bounds.x, win->Bounds.y, win->Bounds.width, TitleBarHeight};
+void Window::Init() {}
+void Window::Draw() {}
+
+std::vector<Window *> States;
+void MakeMoveable(Window *win, float TitleBarHeight) {
+
+  Rectangle TitleBar = {win->Bounds.x, win->Bounds.y, win->Bounds.width,
+                        TitleBarHeight};
 
   if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) &&
       CheckCollisionPointRec(GetMousePosition(), TitleBar)) {
